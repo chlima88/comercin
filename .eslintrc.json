@@ -1,0 +1,27 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:vue/vue3-recommended",
+        "airbnb-base",
+        "prettier"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "plugins": [
+        "vue",
+        "prettier"
+    ],
+    "rules": {
+        "vue/multi-word-component-names": "off",
+        "no-unused-vars": "off",
+        "import/no-extraneous-dependencies": "off",
+        "vue/comment-directive": "off",
+        "no-console": "warn"
+        // "prettier/prettier": "error",
+    }
+}

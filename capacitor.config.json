@@ -1,0 +1,6 @@
+{
+  "appId": "com.example.app",
+  "appName": "capacitor",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
