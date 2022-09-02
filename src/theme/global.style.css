@@ -1,4 +1,118 @@
-ion-toolbar {
-  --background: var(--ion-color-primary);
-  --color: var(--ion-color-primary-contrast);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 62.5%; 
+    /* line-height: 24px; */
+    font-weight: 400;
+    
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    /** primary **/
+  --color-primary: #9747FF;
+  --color-primary-rgb: 151,71,255;
+  --color-primary-contrast: #ffffff;
+  --color-primary-contrast-rgb: 255,255,255;
+  --color-primary-shade: #853ee0;
+  --color-primary-tint: #a159ff;
+
+  /** secondary **/
+  --color-secondary: #c295fe;
+  --color-secondary-rgb: 194,149,254;
+  --color-secondary-contrast: #000000;
+  --color-secondary-contrast-rgb: 0,0,0;
+  --color-secondary-shade: #ab83e0;
+  --color-secondary-tint: #c8a0fe;
+
+  /** tertiary **/
+  --color-tertiary: #632ea8;
+  --color-tertiary-rgb: 99,46,168;
+  --color-tertiary-contrast: #ffffff;
+  --color-tertiary-contrast-rgb: 255,255,255;
+  --color-tertiary-shade: #572894;
+  --color-tertiary-tint: #7343b1;
+
+  /** success **/
+  --color-success: #2dd36f;
+  --color-success-rgb: 45, 211, 111;
+  --color-success-contrast: #ffffff;
+  --color-success-contrast-rgb: 255, 255, 255;
+  --color-success-shade: #28ba62;
+  --color-success-tint: #42d77d;
+
+  /** warning **/
+  --color-warning: #ffc409;
+  --color-warning-rgb: 255, 196, 9;
+  --color-warning-contrast: #000000;
+  --color-warning-contrast-rgb: 0, 0, 0;
+  --color-warning-shade: #e0ac08;
+  --color-warning-tint: #ffca22;
+
+  /** danger **/
+  --color-danger: #eb445a;
+  --color-danger-rgb: 235, 68, 90;
+  --color-danger-contrast: #ffffff;
+  --color-danger-contrast-rgb: 255, 255, 255;
+  --color-danger-shade: #cf3c4f;
+  --color-danger-tint: #ed576b;
+
+  /** dark **/
+  --color-dark: #222428;
+  --color-dark-rgb: 34, 36, 40;
+  --color-dark-contrast: #ffffff;
+  --color-dark-contrast-rgb: 255, 255, 255;
+  --color-dark-shade: #1e2023;
+  --color-dark-tint: #383a3e;
+
+  /** medium **/
+  --color-medium: #92949c;
+  --color-medium-rgb: 146, 148, 156;
+  --color-medium-contrast: #ffffff;
+  --color-medium-contrast-rgb: 255, 255, 255;
+  --color-medium-shade: #808289;
+  --color-medium-tint: #9d9fa6;
+
+  /** light **/
+  --color-light: #f4f5f8;
+  --color-light-rgb: 244, 245, 248;
+  --color-light-contrast: #000000;
+  --color-light-contrast-rgb: 0, 0, 0;
+  --color-light-shade: #d7d8da;
+  --color-light-tint: #f5f6f9;
+}
+
+body {
+    font-size: 1.6rem;
+    height: 100%;
+    /* width: 100vw; */
+}
+
+#app {
+    max-width: none;
+    padding: 0;
+}
+
+button {
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+a {
+    display: flex;
+    text-decoration: none;
+}
+
+h1 { 
+    margin: 0;
 }
