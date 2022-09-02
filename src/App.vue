@@ -1,10 +1,13 @@
-<script setup>
-import MainPage from './views/MainPage.vue';
-</script>
-
 <template>
-  <MainPage />
+    <MainPage />
 </template>
 
-<style scoped>
+<script setup>
+import MainPage from "@/views/MainPage.vue";
+</script>
+
+<style>
+#app {
+    min-width: 350px;
+}
 </style>
