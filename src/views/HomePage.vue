@@ -20,17 +20,23 @@
             <Carrousel title="Mais vistos em sua localização">
                 <template #content>
                     <Card
-                        v-for="i in 2"
+                        v-for="i in 5"
                         :key="i"
                         title="Picole da Thalita"
-                        img="./src/assets/picole.png"
+                        :img="picoleImg"
                         :price="2"
                         :stars="3"
+                        size="lg"
                     >
                         <template #text>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit...
+                            elit...zxczxc zxczxcz zxczxcasdasdasda asdasdas
+                            dasasasd asdasda
                         </template>
+                        <template #address>
+                            Rua da imaginação N° 0000
+                        </template>
+                        <template #contact> (00) 0000-0000 </template>
                     </Card>
                 </template>
             </Carrousel>
@@ -38,20 +44,20 @@
                 <Carrousel title="Favoritos">
                     <template #content>
                         <Card
-                            v-for="i in 2"
+                            v-for="i in 3"
                             :key="i"
                             title="Coco do Charles"
-                            img="./src/assets/coco.png"
+                            :img="cocoImg"
                             size="lg"
                         >
                             <template #text>
                                 Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit...<br />
-                                <br />
-                                Rua da imaginação N° 0000<br />
-                                <br />
-                                (00) 0000-0000
+                                adipisicing elit...
                             </template>
+                            <template #address>
+                                Rua da imaginação N° 0000
+                            </template>
+                            <template #contact> (00) 0000-0000 </template>
                         </Card>
                     </template>
                 </Carrousel>
@@ -61,7 +67,7 @@
                             v-for="i in 2"
                             :key="i"
                             title="Picolé da Thalita"
-                            img="./src/assets/picole.png"
+                            :img="picoleImg"
                             size="lg"
                         >
                             <template #text>
@@ -86,6 +92,8 @@ import Header from "@/components/Header.vue";
 import Main from "@/components/Main.vue";
 import Carrousel from "@/components/Carrousel.vue";
 import Card from "@/components/Card.vue";
+import picoleImg from "@/assets/picole.png";
+import cocoImg from "@/assets/coco.png";
 </script>
 <style scoped>
 h1 {

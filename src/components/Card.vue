@@ -1,13 +1,21 @@
 <template>
     <div class="card">
-        <div class="card__img-container" :class="cardSize">
+        <div class="card__img-container" :class="containerSize">
             <img :src="img" alt="card image" />
         </div>
-        <div class="card__content">
+        <div class="card__content" :class="containerSize">
             <div class="card__data">
                 <p class="card__title">{{ title }}</p>
-                <p class="card__description">
-                    <slot name="text" />
+                <div class="card__description-container">
+                    <p class="card__description card__text">
+                        <slot name="text" />
+                    </p>
+                </div>
+                <p class="card__address card__text">
+                    <slot name="address" />
+                </p>
+                <p class="card__contact card__text">
+                    <slot name="contact" />
                 </p>
                 <div class="card__raters">
                     <div class="price-rater">
@@ -85,11 +93,11 @@
                 </div>
             </div>
             <div class="card__actionbar">
-                <div class="card__marker-container">
-                    <img src="@/assets/icons/marker.svg" alt="marker" />
-                </div>
                 <div class="card__heart-container">
                     <img src="@/assets/icons/favorite.svg" alt="favorite" />
+                </div>
+                <div class="card__marker-container">
+                    <img src="@/assets/icons/marker.svg" alt="marker" />
                 </div>
             </div>
         </div>
@@ -107,10 +115,10 @@ const props = defineProps({
     stars: { type: Number, default: 5 },
 });
 
-const cardSize = computed(() => ({
-    "imgContainer--sm": props.size === "sm",
-    "imgContainer--md": props.size === "md",
-    "imgContainer--lg": props.size === "lg",
+const containerSize = computed(() => ({
+    "container--sm": props.size === "sm",
+    "container--md": props.size === "md",
+    "container--lg": props.size === "lg",
 }));
 
 const price = computed(() => props.price);
@@ -126,6 +134,7 @@ const stars = computed(() => props.stars);
     gap: 10px;
     /* max-width: 15rem; */
     width: 100%;
+    /* height: 100%; */
 
     position: relative;
     border: 1px solid #dddddd;
@@ -182,14 +191,19 @@ const stars = computed(() => props.stars);
     text-align: center;
 }
 
-.card__description {
-    flex: 0;
+.card__description-container {
+    display: none;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card__text {
     font-weight: 600;
     font-size: 12px;
     line-height: 15px;
     color: #4e4e4e;
     text-align: center;
-    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 
 .card__raters {
@@ -197,6 +211,7 @@ const stars = computed(() => props.stars);
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 
     width: 100%;
 }
@@ -233,7 +248,7 @@ const stars = computed(() => props.stars);
 .card__actionbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     position: absolute;
     top: 1rem;
     padding-inline: 1rem;
@@ -257,11 +272,14 @@ const stars = computed(() => props.stars);
     .card {
         flex-direction: row;
         flex: 1;
+        height: 20rem;
+        gap: 0;
     }
 
     .card__img-container {
         flex-shrink: 0;
         width: 93px;
+        height: 20rem;
         border-radius: 7px 0 0 7px;
     }
 
@@ -270,16 +288,16 @@ const stars = computed(() => props.stars);
         height: 100%;
     }
 
-    .imgContainer--sm {
+    .container--sm {
         width: 9.3rem;
     }
 
-    .imgContainer--md {
+    .container--md {
         width: 9.3rem;
     }
 
-    .imgContainer--lg {
-        width: 19rem;
+    .container--lg {
+        width: 18rem;
     }
 
     .card__content {
@@ -290,13 +308,16 @@ const stars = computed(() => props.stars);
     .card__data {
         padding: 0;
     }
+
+    .card__description-container {
+        display: block;
+    }
     .card__actionbar {
-        position: relative;
-        flex-direction: column-reverse;
-        height: 100%;
-        top: 0;
+        flex-direction: column;
+        height: 90%;
+        width: auto;
+        left: 1rem;
         padding: 0;
-        flex: 1;
     }
 }
 </style>

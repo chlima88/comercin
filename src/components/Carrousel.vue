@@ -3,7 +3,9 @@
         <p class="trendlist__title">{{ title }}</p>
         <div class="trendlist__carrousel">
             <img src="@/assets/icons/arrowLeft.svg" alt="left" />
-            <slot name="content" />
+            <div class="trendlist__carrousel-content">
+                <slot name="content" />
+            </div>
             <img src="@/assets/icons/arrowRight.svg" alt="right" />
         </div>
     </div>
@@ -33,9 +35,17 @@ defineProps({
 .trendlist__carrousel {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.trendlist__carrousel-content {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
     gap: 10px;
+}
 
-    width: 100%;
+@media screen and (min-width: 768px) {
 }
 </style>
