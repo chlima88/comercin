@@ -99,6 +99,7 @@ function toggleSideBar() {
     align-items: center;
     padding: 1rem 1.5rem;
     gap: 2rem;
+    z-index: 1;
 }
 .toolbar a {
     flex-shrink: 0;
@@ -138,9 +139,9 @@ function toggleSideBar() {
 .toolbar__menu-container form {
     display: none;
     flex-direction: row;
-    justify-content: flex-end;
     align-items: flex-start;
-    padding: 0px;
+    justify-content: flex-end;
+    padding: 0;
     width: 100%;
 }
 
@@ -149,7 +150,7 @@ function toggleSideBar() {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 50rem;
+    max-width: 80rem;
 }
 .toolbar__input-container svg {
     position: absolute;

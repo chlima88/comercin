@@ -12,11 +12,7 @@
                 </p>
             </div>
             <div class="cardlist">
-                <div
-                    v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-                    :key="i"
-                    class="card"
-                >
+                <div v-for="i in 10" :key="i" class="card">
                     <div class="card__img-container">
                         <img src="@/assets/coco.png" alt="card image" />
                     </div>

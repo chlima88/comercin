@@ -14,6 +14,8 @@ main {
     padding: 1.5rem;
     gap: 1.5rem;
 
-    width: 100%;
+    max-width: 120rem;
+    margin: auto;
+    margin-bottom: 60px;
 }
 </style>
