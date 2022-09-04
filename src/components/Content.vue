@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import GMap from "@/components/GMap.vue";
+import GMap from "./GMap.vue";
 
 const user = { lat: -22.974944, lng: -43.395531 };
 const vendorOne = { lat: -22.974483, lng: -43.394483 };
