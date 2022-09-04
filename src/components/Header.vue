@@ -1,12 +1,15 @@
 <template>
     <header>
+        <Toolbar />
         <div class="top">
             <h1><slot name="title" /></h1>
         </div>
     </header>
 </template>
 
-<script setup></script>
+<script setup>
+import Toolbar from "@/components/Toolbar.vue";
+</script>
 
 <style scoped>
 .top {

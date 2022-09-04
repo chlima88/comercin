@@ -1,10 +1,7 @@
 <template>
-    <Toolbar />
     <RouterView />
 </template>
 
-<script setup>
-import Toolbar from "@/components/Toolbar.vue";
-</script>
+<script setup></script>
 
 <style scoped></style>
