@@ -140,8 +140,9 @@ function toggleSideBar() {
     display: none;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 0;
+    padding-left: 15%;
     width: 100%;
 }
 
