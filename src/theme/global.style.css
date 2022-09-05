@@ -27,12 +27,12 @@
   --color-primary-tint: #a159ff;
 
   /** secondary **/
-  --color-secondary: #c295fe;
+  --color-secondary: #e0ccfc;
   --color-secondary-rgb: 194,149,254;
   --color-secondary-contrast: #000000;
   --color-secondary-contrast-rgb: 0,0,0;
-  --color-secondary-shade: #ab83e0;
-  --color-secondary-tint: #c8a0fe;
+  --color-secondary-shade: #ae8fd6;
+  --color-secondary-tint: #faf6ff;
 
   /** tertiary **/
   --color-tertiary: #632ea8;

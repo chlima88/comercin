@@ -26,12 +26,14 @@
                         :img="picoleImg"
                         :price="2"
                         :stars="3"
-                        size="lg"
+                        size="md"
                     >
                         <template #text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit...zxczxc zxczxcz zxczxcasdasdasda asdasdas
-                            dasasasd asdasda
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Ipsam inventore deleniti dolore repellendus
+                            voluptatem velit molestias quidem omnis excepturi
+                            eveniet, minus vitae. Qui fugiat reiciendis optio
+                            eligendi libero. Deleniti, sed.
                         </template>
                         <template #address>
                             Rua da imaginação N° 0000
@@ -44,7 +46,7 @@
                 <Carrousel title="Favoritos">
                     <template #content>
                         <Card
-                            v-for="i in 3"
+                            v-for="i in 5"
                             :key="i"
                             title="Coco do Charles"
                             :img="cocoImg"
@@ -52,7 +54,10 @@
                         >
                             <template #text>
                                 Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit...
+                                adipisicing elit. Illum ab quo ducimus amet qui
+                                inventore, officiis assumenda sequi, totam dolor
+                                minus! Odio pariatur alias sequi repudiandae
+                                sint velit ad. Incidunt.
                             </template>
                             <template #address>
                                 Rua da imaginação N° 0000
@@ -64,20 +69,24 @@
                 <Carrousel title="Vistos Recentemente">
                     <template #content>
                         <Card
-                            v-for="i in 2"
+                            v-for="i in 5"
                             :key="i"
-                            title="Picolé da Thalita"
-                            :img="picoleImg"
+                            title="Sanduíche do Lucas"
+                            :img="sanduicheImg"
                             size="lg"
                         >
                             <template #text>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit...<br />
-                                <br />
-                                Rua da imaginação N° 0000<br />
-                                <br />
-                                (00) 0000-0000
+                                Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Repellat, consequuntur omnis,
+                                fugiat nobis enim dolor sint cumque ipsa ipsam
+                                eaque sapiente nihil quis! Eos consequatur
+                                consequuntur aliquam, deserunt impedit
+                                molestiae.
                             </template>
+                            <template #address>
+                                Rua da imaginação N° 0000
+                            </template>
+                            <template #contact> (00) 0000-0000 </template>
                         </Card>
                     </template>
                 </Carrousel>
@@ -94,6 +103,7 @@ import Carrousel from "@/components/Carrousel.vue";
 import Card from "@/components/Card.vue";
 import picoleImg from "@/assets/picole.png";
 import cocoImg from "@/assets/coco.png";
+import sanduicheImg from "@/assets/sanduiche.png";
 </script>
 <style scoped>
 h1 {
@@ -132,12 +142,21 @@ p {
     align-items: center;
     padding-block: 5px;
     width: 25rem;
-    border: 1px solid #dddddd;
+    border: 1px solid var(--color-light-shade);
+    transition: all ease 0.2s;
+}
+
+.tags:hover {
+    border-color: var(--color-primary);
+    background-color: var(--color-secondary-tint);
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: all ease 0.2s;
 }
 
 .tags p {
     font-weight: 600;
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 .section-row {
@@ -145,5 +164,21 @@ p {
     flex-direction: column;
     gap: 1.5rem;
     width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .tags {
+        padding-block: 2rem;
+    }
+
+    .section-row {
+        flex-direction: row;
+        max-width: 100%;
+        gap: 5rem;
+    }
+
+    .section-row .trendlist {
+        overflow: hidden;
+    }
 }
 </style>

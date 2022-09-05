@@ -6,11 +6,9 @@
         <div class="card__content" :class="containerSize">
             <div class="card__data">
                 <p class="card__title">{{ title }}</p>
-                <div class="card__description-container">
-                    <p class="card__description card__text">
-                        <slot name="text" />
-                    </p>
-                </div>
+                <p class="card__description card__text">
+                    <slot name="text" />
+                </p>
                 <p class="card__address card__text">
                     <slot name="address" />
                 </p>
@@ -132,13 +130,17 @@ const stars = computed(() => props.stars);
     align-items: center;
     justify-content: center;
     gap: 10px;
-    /* max-width: 15rem; */
-    width: 100%;
-    /* height: 100%; */
 
     position: relative;
     border: 1px solid #dddddd;
     border-radius: 0.7rem;
+    transition: all 0.3s;
+}
+.card:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transform: scale(0.97);
+    transition: all ease 0.3s;
+    cursor: pointer;
 }
 
 .card__img-container {
@@ -148,20 +150,7 @@ const stars = computed(() => props.stars);
 }
 .card__img-container img {
     width: 100%;
-}
-
-.imgContainer--sm {
-    width: 9.3rem;
-    height: 9.3rem;
-}
-
-.imgContainer--md {
-    width: 9.3rem;
-    height: 9.3rem;
-}
-
-.imgContainer--lg {
-    width: 100%;
+    transition: all ease 0.2s;
 }
 
 .card__content {
@@ -191,10 +180,11 @@ const stars = computed(() => props.stars);
     text-align: center;
 }
 
-.card__description-container {
-    display: none;
-    width: 100%;
+.card__description {
     overflow: hidden;
+    display: none;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 .card__text {
@@ -289,15 +279,15 @@ const stars = computed(() => props.stars);
     }
 
     .container--sm {
-        width: 9.3rem;
+        width: 16rem;
     }
 
     .container--md {
-        width: 9.3rem;
+        width: 20rem;
     }
 
     .container--lg {
-        width: 18rem;
+        width: 26rem;
     }
 
     .card__content {
@@ -309,8 +299,9 @@ const stars = computed(() => props.stars);
         padding: 0;
     }
 
-    .card__description-container {
-        display: block;
+    .card__description {
+        display: -webkit-box;
+        /* height: 45px; */
     }
     .card__actionbar {
         flex-direction: column;
