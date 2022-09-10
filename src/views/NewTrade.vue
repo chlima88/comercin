@@ -1,23 +1,28 @@
 <template>
     <Header>
-        <template #title>Cadastro de Itens</template>
+        <template #title>Sugerir um Parceiro</template>
     </Header>
     <Main>
         <template #main>
             <div id="messageBox">
-                <h1>Novo Comércio</h1>
+                <h1>Não encontrou quem procurava? Indique-o aqui!</h1>
             </div>
             <div id="textBox">
-                <p>Informe os dados do item</p>
+                <p>Manteremos você atualizado!</p>
+                <p>Assim que o comércio se juntar a nós, te notificaremos.</p>
             </div>
             <section id="form">
                 <form action="">
-                    <p>
-                        <input type="text" name="nameItem" id="nameItem" />
-                        <input type="number" name="itemPrice" id="itemPrice" />
-                    </p>
+                    <input type="text" name="nameItem" id="nameItem" placeholder="Nome Fantasia:"/>
 
-                    <input type="text" name="desciption" id="desciption" />
+                    <input type="text" name="address" id="address" placeholder="Endereço completo:"/>
+                    <p>
+                        <input type="tel" name="tel" id="tel" placeholder="Tel: (xx) xxxx-xxxx"/>
+                        <input type="number" name="cep" id="cep" placeholder="CEP: 00000-000"/>
+                    </p>
+                    <input type="text" name="email" id="email" placeholder="E-mail:"/>
+
+                    <input type="text" name="webSite" id="webSite" placeholder="Web Site:"/>
 
                     <span id="send">
                         <input type="submit" value="Enviar" id="button" />
@@ -54,9 +59,10 @@ import Main from "@/components/Main.vue";
 }
 
 #messageBox > h1 {
-    width: 123px;
+    /* importar font-family */
+    width: 590px;
     height: 30px;
-    font-family: "Inter";
+    font-family:'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
@@ -77,24 +83,34 @@ import Main from "@/components/Main.vue";
     align-items: center;
     padding: 6px 0px;
     gap: 10px;
+
     width: 1200px;
-    height: 31px;
+    height: 60px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    border: 1;
+    align-self: stretch;
+    flex-grow: 0;
 }
 
-textBox > p {
+#textBox p {
+    /* importar fonte */
     width: 1200px;
     height: 19px;
-    font-family: "Inter";
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    display: flex;
+    display: block;
     align-items: center;
     text-align: center;
-    color: #4e4e4e;
+    color: #4E4E4E;
     flex: none;
-    order: 0;
+    border: 0;
     align-self: stretch;
     flex-grow: 0;
 }
@@ -102,36 +118,13 @@ textBox > p {
 form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 0px;
     gap: 10px;
     width: 650px;
-    height: 262px;
-}
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 10px;
-    width: 650px;
-    height: 262px;
+    height: 290px;
     flex: none;
     order: 2;
-    flex-grow: 0;
-}
-
-form > p {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 5px;
-    width: 650px;
-    height: 40px;
-    flex: none;
-    order: 0;
-    align-self: stretch;
     flex-grow: 0;
 }
 
@@ -142,28 +135,28 @@ form > p {
     align-items: flex-start;
     padding: 10px;
     gap: 10px;
-    width: 537px;
-    height: 40px;
-    background: #faf7ff;
-    border: 1px solid #dddddd;
+    width: 650px;
+    height: 39px;
+    background: #FAF7FF;
+    border: 1px solid #DDDDDD;
     border-radius: 3px;
     flex: none;
     order: 0;
     align-self: stretch;
-    flex-grow: 1;
+    flex-grow: 0;
 }
 
-#itemPrice {
+#address {
     box-sizing: border-box;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     padding: 10px;
     gap: 10px;
-    width: 110px;
-    height: 40px;
-    background: #faf7ff;
-    border: 1px solid #dddddd;
+    width: 650px;
+    height: 39px;
+    background: #FAF7FF;
+    border: 1px solid #DDDDDD;
     border-radius: 3px;
     flex: none;
     order: 1;
@@ -171,15 +164,86 @@ form > p {
     flex-grow: 0;
 }
 
-#desciption {
-    box-sizing: border-box;
+form > p {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 5px;
     width: 650px;
-    height: 157px;
-    background: #faf7ff;
-    border: 1px solid #dddddd;
+    height: 39px;
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+#tel {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    width: 322.5px;
+    height: 39px;
+    background: #FAF7FF;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+#cep {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    width: 322.5px;
+    height: 39px;
+    background: #FAF7FF;
+    border: 1px solid #DDDDDD;
     border-radius: 3px;
     flex: none;
     order: 1;
+    flex-grow: 1;
+}
+
+#email {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    width: 650px;
+    height: 39px;
+    background: #FAF7FF;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+#webSite {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    width: 650px;
+    height: 39px;
+    background: #FAF7FF;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    flex: none;
+    order: 4;
     align-self: stretch;
     flex-grow: 0;
 }
@@ -192,10 +256,10 @@ form > p {
     padding: 3px 20px;
     width: 650px;
     height: 45px;
-    background: #9747ff;
+    background: #9747FF;
     border-radius: 3px;
     flex: none;
-    order: 2;
+    order: 5;
     align-self: stretch;
     flex-grow: 0;
 }
@@ -203,15 +267,15 @@ form > p {
 #button {
     width: 84px;
     height: 22px;
-    background-color: #9747ff;
-    font-family: "Inter";
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
     display: flex;
     align-items: center;
-    color: #ffffff;
+    color: #FFFFFF;
+    background: #9747FF;
     flex: none;
     border: 0;
     flex-grow: 0;
