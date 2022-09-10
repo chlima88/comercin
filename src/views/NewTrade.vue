@@ -13,20 +13,54 @@
             </div>
             <section>
                 <form action="">
-                    <input type="text" name="nameItem" class="nameItem" placeholder="Nome Fantasia:" />
+                    <input
+                        type="text"
+                        name="nameItem"
+                        class="nameItem"
+                        placeholder="Nome Fantasia:"
+                    />
 
-                    <input type="text" name="address" class="address" placeholder="Endereço completo:" />
+                    <input
+                        type="text"
+                        name="address"
+                        class="address"
+                        placeholder="Endereço completo:"
+                    />
                     <p>
-                        <input type="tel" name="tel" class="tel" placeholder="Tel: (xx) xxxx-xxxx" />
-                        <input type="number" name="cep" class="cep" placeholder="CEP: 00000-000" />
+                        <input
+                            type="tel"
+                            name="tel"
+                            class="tel"
+                            placeholder="Tel: (xx) xxxx-xxxx"
+                        />
+                        <input
+                            type="number"
+                            name="cep"
+                            class="cep"
+                            placeholder="CEP: 00000-000"
+                        />
                     </p>
-                    <input type="text" name="email" class="email" placeholder="E-mail:" />
+                    <input
+                        type="text"
+                        name="email"
+                        class="email"
+                        placeholder="E-mail:"
+                    />
 
-                    <input type="text" name="webSite" class="webSite" placeholder="Web Site:" />
+                    <input
+                        type="text"
+                        name="webSite"
+                        class="webSite"
+                        placeholder="Web Site:"
+                    />
 
                     <span class="send">
                         <input type="submit" value="Enviar" class="button" />
-                        <img src="../assets/icons/plus.svg" alt="" class="plus" />
+                        <img
+                            src="../assets/icons/plus.svg"
+                            alt=""
+                            class="plus"
+                        />
                     </span>
                 </form>
             </section>
@@ -58,11 +92,11 @@ import Main from "@/components/Main.vue";
     flex-grow: 0;
 }
 
-#messageBox>h1 {
+#messageBox h1 {
     /* importar font-family */
     width: 590px;
     height: 30px;
-    font-family: 'Inter';
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
@@ -95,7 +129,7 @@ import Main from "@/components/Main.vue";
     /* importar fonte */
     width: 1200px;
     height: 19px;
-    font-family: 'Inter';
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -103,7 +137,7 @@ import Main from "@/components/Main.vue";
     display: block;
     align-items: center;
     text-align: center;
-    color: #4E4E4E;
+    color: #4e4e4e;
     flex: none;
     border: 0;
     align-self: stretch;
@@ -132,8 +166,8 @@ form {
     gap: 10px;
     width: 650px;
     height: 39px;
-    background: #FAF7FF;
-    border: 1px solid #DDDDDD;
+    background: #faf7ff;
+    border: 1px solid #dddddd;
     border-radius: 3px;
     flex: none;
     order: 0;
@@ -150,8 +184,8 @@ form {
     gap: 10px;
     width: 650px;
     height: 39px;
-    background: #FAF7FF;
-    border: 1px solid #DDDDDD;
+    background: #faf7ff;
+    border: 1px solid #dddddd;
     border-radius: 3px;
     flex: none;
     order: 1;
@@ -159,7 +193,7 @@ form {
     flex-grow: 0;
 }
 
-form>p {
+form p {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -182,8 +216,8 @@ form>p {
     gap: 10px;
     width: 322.5px;
     height: 39px;
-    background: #FAF7FF;
-    border: 1px solid #DDDDDD;
+    background: #faf7ff;
+    border: 1px solid #dddddd;
     border-radius: 3px;
     flex: none;
     order: 0;
@@ -199,8 +233,8 @@ form>p {
     gap: 10px;
     width: 322.5px;
     height: 39px;
-    background: #FAF7FF;
-    border: 1px solid #DDDDDD;
+    background: #faf7ff;
+    border: 1px solid #dddddd;
     border-radius: 3px;
     flex: none;
     order: 1;
@@ -216,8 +250,8 @@ form>p {
     gap: 10px;
     width: 650px;
     height: 39px;
-    background: #FAF7FF;
-    border: 1px solid #DDDDDD;
+    background: #faf7ff;
+    border: 1px solid #dddddd;
     border-radius: 3px;
     flex: none;
     order: 3;
@@ -234,8 +268,8 @@ form>p {
     gap: 10px;
     width: 650px;
     height: 39px;
-    background: #FAF7FF;
-    border: 1px solid #DDDDDD;
+    background: #faf7ff;
+    border: 1px solid #dddddd;
     border-radius: 3px;
     flex: none;
     order: 4;
@@ -251,7 +285,7 @@ form>p {
     padding: 3px 20px;
     width: 650px;
     height: 45px;
-    background: #9747FF;
+    background: #9747ff;
     border-radius: 3px;
     flex: none;
     order: 5;
@@ -262,15 +296,15 @@ form>p {
 .button {
     width: 84px;
     height: 22px;
-    font-family: 'Inter';
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
     display: flex;
     align-items: center;
-    color: #FFFFFF;
-    background: #9747FF;
+    color: #ffffff;
+    background: #9747ff;
     flex: none;
     border: 0;
     flex-grow: 0;

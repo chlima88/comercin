@@ -3,9 +3,9 @@
 
     <form action="submit">
         <div class="box_search">
-            <img src="../assets/icons/search.svg"/>
+            <img src="../assets/icons/search.svg" />
             <input type="text" class="search" placeholder="Busque pelo mapa" />
-            <img src="../assets/icons/close.svg"/>
+            <img src="../assets/icons/close.svg" />
         </div>
         <button class="button_search" type="submit">Procurar</button>
     </form>
@@ -39,11 +39,11 @@ import Footer from "@/components/Footer.vue";
     color: white;
     width: 650px;
     height: 45px;
-    background: #9747FF;
+    background: #9747ff;
     border-radius: 3px;
 }
 
-form{
+form {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -69,20 +69,20 @@ form{
     gap: 10px;
     width: 1106px;
     height: 40px;
-    background: #FAF7FF;
-    border: 1px solid #DDDDDD;
+    background: #faf7ff;
+    border: 1px solid #dddddd;
     border-radius: 3px 0px 0px 3px;
     flex: none;
     order: 0;
     align-self: stretch;
     flex-grow: 1;
 }
-.search{
+.search {
     width: 100%;
     height: 40px;
     text-align: center;
     border: 0;
-    background: #FAF7FF;
+    background: #faf7ff;
 }
 
 .button_search {
@@ -93,7 +93,7 @@ form{
     padding: 3px 15px;
     width: 94px;
     height: 40px;
-    background: #9747FF;
+    background: #9747ff;
     border-radius: 0px 3px 3px 0px;
     flex: none;
     order: 1;

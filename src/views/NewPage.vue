@@ -14,14 +14,22 @@
                 <form action="">
                     <p>
                         <input type="text" name="nameItem" class="nameItem" />
-                        <input type="number" name="itemPrice" class="itemPrice" />
+                        <input
+                            type="number"
+                            name="itemPrice"
+                            class="itemPrice"
+                        />
                     </p>
 
                     <input type="text" name="desciption" class="desciption" />
 
                     <span class="send">
                         <input type="submit" value="Enviar" class="button" />
-                        <img src="../assets/icons/plus.svg" alt="" class="plus" />
+                        <img
+                            src="../assets/icons/plus.svg"
+                            alt=""
+                            class="plus"
+                        />
                     </span>
                 </form>
             </section>
