@@ -3,8 +3,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "@/views/HomePage.vue";
 import AccountPage from "@/views/AccountPage.vue";
 import NewPage from "@/views/NewPage.vue";
+import NewTrade from "@/views/NewTrade.vue";
 import FavoritesPage from "@/views/FavoritesPage.vue";
 import SettingsPage from "@/views/SettingsPage.vue";
+
 
 const routes = [
     {
@@ -18,6 +20,10 @@ const routes = [
     {
         path: "/new",
         component: NewPage,
+    },
+    {
+        path: "/newTrade",
+        component: NewTrade,
     },
     {
         path: "/favorites",

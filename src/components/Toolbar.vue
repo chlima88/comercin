@@ -54,6 +54,9 @@
                 <router-link to="/new">
                     <img src="@/assets/icons/plus_square.png" />
                 </router-link>
+                <router-link to="/newTrade">
+                    <img src="@/assets/icons/plus_square.png" />
+                </router-link>
                 <router-link to="/favorites">
                     <img src="@/assets/icons/favorite.png" />
                 </router-link>

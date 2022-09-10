@@ -34,7 +34,7 @@
 <script setup>
 import Header from "@/components/Header.vue";
 import Main from "@/components/Main.vue";
-import Content from "@/components/Content.vue";
+// import Content from "@/components/Content.vue";
 </script>
 
 <style scoped>
@@ -47,7 +47,6 @@ import Content from "@/components/Content.vue";
     gap: 10px;
     width: 1200px;
     height: 70px;
-    /* Inside auto layout */
     flex: none;
     order: 0;
     align-self: stretch;
@@ -66,14 +65,12 @@ import Content from "@/components/Content.vue";
     align-items: center;
     text-align: center;
     color: #000000;
-    /* Inside auto layout */
     flex: none;
     order: 0;
     flex-grow: 0;
 }
 
 #textBox {
-    /* Auto layout */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,7 +93,6 @@ textBox > p {
     align-items: center;
     text-align: center;
     color: #4e4e4e;
-    /* Inside auto layout */
     flex: none;
     order: 0;
     align-self: stretch;
@@ -113,7 +109,6 @@ form {
     height: 262px;
 }
 form {
-    /* Auto layout */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -121,14 +116,12 @@ form {
     gap: 10px;
     width: 650px;
     height: 262px;
-    /* Inside auto layout */
     flex: none;
     order: 2;
     flex-grow: 0;
 }
 
 form > p {
-    /* Auto layout */
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -136,7 +129,6 @@ form > p {
     gap: 5px;
     width: 650px;
     height: 40px;
-    /* Inside auto layout */
     flex: none;
     order: 0;
     align-self: stretch;
@@ -145,7 +137,6 @@ form > p {
 
 #nameItem {
     box-sizing: border-box;
-    /* Auto layout */
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -156,7 +147,6 @@ form > p {
     background: #faf7ff;
     border: 1px solid #dddddd;
     border-radius: 3px;
-    /* Inside auto layout */
     flex: none;
     order: 0;
     align-self: stretch;
@@ -165,7 +155,6 @@ form > p {
 
 #itemPrice {
     box-sizing: border-box;
-    /* Auto layout */
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -176,7 +165,6 @@ form > p {
     background: #faf7ff;
     border: 1px solid #dddddd;
     border-radius: 3px;
-    /* Inside auto layout */
     flex: none;
     order: 1;
     align-self: stretch;
@@ -190,7 +178,6 @@ form > p {
     background: #faf7ff;
     border: 1px solid #dddddd;
     border-radius: 3px;
-    /* Inside auto layout */
     flex: none;
     order: 1;
     align-self: stretch;
@@ -207,7 +194,6 @@ form > p {
     height: 45px;
     background: #9747ff;
     border-radius: 3px;
-    /* Inside auto layout */
     flex: none;
     order: 2;
     align-self: stretch;
@@ -223,21 +209,17 @@ form > p {
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
-    /* identical to box height */
     display: flex;
     align-items: center;
     color: #ffffff;
-    /* Inside auto layout */
     flex: none;
     border: 0;
     flex-grow: 0;
 }
 
 #plus {
-    /* Solid/Interface/Plus */
     width: 24px;
     height: 24px;
-    /* Inside auto layout */
     flex: none;
     order: 1;
     flex-grow: 0;
