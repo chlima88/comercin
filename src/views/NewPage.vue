@@ -10,18 +10,18 @@
             <div id="textBox">
                 <p>Informe os dados do item</p>
             </div>
-            <section id="form">
+            <section>
                 <form action="">
                     <p>
-                        <input type="text" name="nameItem" id="nameItem" />
-                        <input type="number" name="itemPrice" id="itemPrice" />
+                        <input type="text" name="nameItem" class="nameItem" />
+                        <input type="number" name="itemPrice" class="itemPrice" />
                     </p>
 
-                    <input type="text" name="desciption" id="desciption" />
+                    <input type="text" name="desciption" class="desciption" />
 
-                    <span id="send">
-                        <input type="submit" value="Enviar" id="button" />
-                        <img src="../assets/icons/plus.svg" alt="" id="plus" />
+                    <span class="send">
+                        <input type="submit" value="Enviar" class="button" />
+                        <img src="../assets/icons/plus.svg" alt="" class="plus" />
                     </span>
                 </form>
             </section>
@@ -81,7 +81,7 @@ import Main from "@/components/Main.vue";
     height: 31px;
 }
 
-textBox > p {
+#textBox > p {
     width: 1200px;
     height: 19px;
     font-family: "Inter";
@@ -89,25 +89,16 @@ textBox > p {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    display: flex;
+    display: block;
     align-items: center;
     text-align: center;
     color: #4e4e4e;
     flex: none;
-    order: 0;
+    border: 0;
     align-self: stretch;
     flex-grow: 0;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 10px;
-    width: 650px;
-    height: 262px;
-}
 form {
     display: flex;
     flex-direction: column;
@@ -135,7 +126,7 @@ form > p {
     flex-grow: 0;
 }
 
-#nameItem {
+.nameItem {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -153,7 +144,7 @@ form > p {
     flex-grow: 1;
 }
 
-#itemPrice {
+.itemPrice {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -171,7 +162,7 @@ form > p {
     flex-grow: 0;
 }
 
-#desciption {
+.desciption {
     box-sizing: border-box;
     width: 650px;
     height: 157px;
@@ -184,7 +175,7 @@ form > p {
     flex-grow: 0;
 }
 
-#send {
+.send {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -200,7 +191,7 @@ form > p {
     flex-grow: 0;
 }
 
-#button {
+.button {
     width: 84px;
     height: 22px;
     background-color: #9747ff;
@@ -217,7 +208,7 @@ form > p {
     flex-grow: 0;
 }
 
-#plus {
+.plus {
     width: 24px;
     height: 24px;
     flex: none;

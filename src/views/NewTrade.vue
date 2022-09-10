@@ -11,22 +11,22 @@
                 <p>Manteremos você atualizado!</p>
                 <p>Assim que o comércio se juntar a nós, te notificaremos.</p>
             </div>
-            <section id="form">
+            <section>
                 <form action="">
-                    <input type="text" name="nameItem" id="nameItem" placeholder="Nome Fantasia:"/>
+                    <input type="text" name="nameItem" class="nameItem" placeholder="Nome Fantasia:" />
 
-                    <input type="text" name="address" id="address" placeholder="Endereço completo:"/>
+                    <input type="text" name="address" class="address" placeholder="Endereço completo:" />
                     <p>
-                        <input type="tel" name="tel" id="tel" placeholder="Tel: (xx) xxxx-xxxx"/>
-                        <input type="number" name="cep" id="cep" placeholder="CEP: 00000-000"/>
+                        <input type="tel" name="tel" class="tel" placeholder="Tel: (xx) xxxx-xxxx" />
+                        <input type="number" name="cep" class="cep" placeholder="CEP: 00000-000" />
                     </p>
-                    <input type="text" name="email" id="email" placeholder="E-mail:"/>
+                    <input type="text" name="email" class="email" placeholder="E-mail:" />
 
-                    <input type="text" name="webSite" id="webSite" placeholder="Web Site:"/>
+                    <input type="text" name="webSite" class="webSite" placeholder="Web Site:" />
 
-                    <span id="send">
-                        <input type="submit" value="Enviar" id="button" />
-                        <img src="../assets/icons/plus.svg" alt="" id="plus" />
+                    <span class="send">
+                        <input type="submit" value="Enviar" class="button" />
+                        <img src="../assets/icons/plus.svg" alt="" class="plus" />
                     </span>
                 </form>
             </section>
@@ -58,11 +58,11 @@ import Main from "@/components/Main.vue";
     flex-grow: 0;
 }
 
-#messageBox > h1 {
+#messageBox>h1 {
     /* importar font-family */
     width: 590px;
     height: 30px;
-    font-family:'Inter';
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
@@ -83,13 +83,8 @@ import Main from "@/components/Main.vue";
     align-items: center;
     padding: 6px 0px;
     gap: 10px;
-
     width: 1200px;
     height: 60px;
-
-
-    /* Inside auto layout */
-
     flex: none;
     border: 1;
     align-self: stretch;
@@ -128,7 +123,7 @@ form {
     flex-grow: 0;
 }
 
-#nameItem {
+.nameItem {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -146,7 +141,7 @@ form {
     flex-grow: 0;
 }
 
-#address {
+.address {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -164,7 +159,7 @@ form {
     flex-grow: 0;
 }
 
-form > p {
+form>p {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -178,7 +173,7 @@ form > p {
     flex-grow: 0;
 }
 
-#tel {
+.tel {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -195,7 +190,7 @@ form > p {
     flex-grow: 1;
 }
 
-#cep {
+.cep {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -212,7 +207,7 @@ form > p {
     flex-grow: 1;
 }
 
-#email {
+.email {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -230,7 +225,7 @@ form > p {
     flex-grow: 0;
 }
 
-#webSite {
+.webSite {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -248,7 +243,7 @@ form > p {
     flex-grow: 0;
 }
 
-#send {
+.send {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -264,7 +259,7 @@ form > p {
     flex-grow: 0;
 }
 
-#button {
+.button {
     width: 84px;
     height: 22px;
     font-family: 'Inter';
@@ -281,7 +276,7 @@ form > p {
     flex-grow: 0;
 }
 
-#plus {
+.plus {
     width: 24px;
     height: 24px;
     flex: none;
