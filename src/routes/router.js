@@ -6,6 +6,7 @@ import NewPage from "@/views/NewPage.vue";
 import NewTrade from "@/views/NewTrade.vue";
 import FavoritesPage from "@/views/FavoritesPage.vue";
 import SettingsPage from "@/views/SettingsPage.vue";
+import MapPage from "@/views/MapPage.vue";
 
 
 const routes = [
@@ -40,6 +41,10 @@ const routes = [
     {
         path: "/logout",
         component: SettingsPage,
+    },
+    {
+        path: "/MapPage",
+        component: MapPage,
     },
 ];
 
