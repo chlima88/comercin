@@ -20,7 +20,6 @@
 </template>
 
 <script setup>
-import Main from "@/components/Main.vue";
 import Content from "@/components/Content.vue";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
@@ -79,7 +78,7 @@ form {
 }
 .search {
     width: 100%;
-    height: 40px;
+    height: 38px;
     text-align: center;
     border: 0;
     background: #faf7ff;
