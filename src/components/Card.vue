@@ -5,7 +5,9 @@
         </div>
         <div class="card__content" :class="containerSize">
             <div class="card__data">
-                <p class="card__title">{{ title }}</p>
+                <div>
+                    <p class="card__title">{{ title }}</p>
+                </div>
                 <p class="card__description card__text">
                     <slot name="text" />
                 </p>
@@ -146,15 +148,18 @@ const stars = computed(() => props.stars);
 .card__img-container {
     border-radius: 7px 7px 0 0;
     overflow: hidden;
-    height: 100%;
+    width: 15rem;
+    height: 10rem;
 }
 .card__img-container img {
-    width: 100%;
+    /* width: 100%; */
+    height: 100%;
     transition: all ease 0.2s;
+    margin: auto;
 }
 
 .card__content {
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
@@ -166,10 +171,9 @@ const stars = computed(() => props.stars);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     padding: 0 1rem 1rem;
     gap: 5px;
-
+    /* width: 15rem; */
     height: 100%;
 }
 
@@ -177,7 +181,9 @@ const stars = computed(() => props.stars);
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
-    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card__description {
@@ -187,13 +193,19 @@ const stars = computed(() => props.stars);
     -webkit-box-orient: vertical;
 }
 
+.card__address,
+.card__contact {
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
 .card__text {
     font-weight: 600;
     font-size: 12px;
     line-height: 15px;
     color: #4e4e4e;
-    text-align: center;
-    word-wrap: break-word;
 }
 
 .card__raters {
@@ -275,7 +287,8 @@ const stars = computed(() => props.stars);
 
     .card__img-container img {
         object-fit: cover;
-        height: 100%;
+        width: 100%;
+        /* height: 100%; */
     }
 
     .container--sm {
@@ -297,6 +310,10 @@ const stars = computed(() => props.stars);
 
     .card__data {
         padding: 0;
+    }
+
+    .card__title {
+        text-align: left;
     }
 
     .card__description {
