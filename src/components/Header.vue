@@ -1,6 +1,7 @@
 <template>
     <header>
-        <Toolbar />
+        <Toolbar @toggle-menu="toggleSideMenu" />
+        <SideMenu :show="state" @toggle-menu="state = false" />
         <div class="top">
             <h1><slot name="title" /></h1>
         </div>
@@ -8,7 +9,15 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import Toolbar from "@/components/Toolbar.vue";
+import SideMenu from "./SideMenu.vue";
+
+const state = ref(false);
+
+const toggleSideMenu = () => {
+    state.value = !state.value;
+};
 </script>
 
 <style scoped>

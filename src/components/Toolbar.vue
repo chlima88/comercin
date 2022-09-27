@@ -1,6 +1,11 @@
 <template>
     <div class="toolbar">
-        <a href="#" class="toolbar__avatar-container" @click="toggleSideBar">
+        <!-- <a href="#" class="toolbar__avatar-container" @click="toggleSideBar"> -->
+        <a
+            href="#"
+            class="toolbar__avatar-container"
+            @click="$emit('toggleMenu')"
+        >
             <img
                 class="toolbar__avatar-image"
                 src="@/assets/avatar.png"
@@ -83,11 +88,13 @@
 </template>
 
 <script setup>
-import router from "@/routes/router.js";
+// import router from "@/routes/router.js";
 
-function toggleSideBar() {
-    router.push("/account");
-}
+defineEmits(["toggleMenu"]);
+
+// function toggleSideBar() {
+//     router.push("/account");
+// }
 </script>
 
 <style scoped>
