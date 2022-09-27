@@ -11,8 +11,8 @@
                 <p>Manteremos você atualizado!</p>
                 <p>Assim que o comércio se juntar a nós, te notificaremos.</p>
             </div>
-            <section>
-                <form action="">
+            <section class="form">
+                <form>
                     <input
                         type="text"
                         name="nameItem"
@@ -84,7 +84,7 @@ import Main from "@/components/Main.vue";
     align-items: center;
     padding: 20px 0px;
     gap: 10px;
-    width: 1200px;
+    max-width: 1200px;
     height: 70px;
     flex: none;
     order: 0;
@@ -94,7 +94,7 @@ import Main from "@/components/Main.vue";
 
 #messageBox h1 {
     /* importar font-family */
-    width: 590px;
+    max-width: 590px;
     height: 30px;
     font-family: "Inter", sans-serif;
     font-style: normal;
@@ -117,7 +117,7 @@ import Main from "@/components/Main.vue";
     align-items: center;
     padding: 6px 0px;
     gap: 10px;
-    width: 1200px;
+    max-width: 1200px;
     height: 60px;
     flex: none;
     border: 1;
@@ -127,7 +127,7 @@ import Main from "@/components/Main.vue";
 
 #textBox p {
     /* importar fonte */
-    width: 1200px;
+    max-width: 1200px;
     height: 19px;
     font-family: "Inter", sans-serif;
     font-style: normal;
@@ -144,17 +144,24 @@ import Main from "@/components/Main.vue";
     flex-grow: 0;
 }
 
+.form {
+    width: 100%;
+    align-items: center;
+    margin: auto;
+}
+
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0px;
     gap: 10px;
-    width: 650px;
+    max-width: 650px;
     height: 290px;
     flex: none;
     order: 2;
     flex-grow: 0;
+    margin: auto;
 }
 
 .nameItem {
@@ -164,7 +171,7 @@ form {
     align-items: flex-start;
     padding: 10px;
     gap: 10px;
-    width: 650px;
+    max-width: 650px;
     height: 39px;
     background: #faf7ff;
     border: 1px solid #dddddd;
@@ -182,7 +189,7 @@ form {
     align-items: flex-start;
     padding: 10px;
     gap: 10px;
-    width: 650px;
+    max-width: 650px;
     height: 39px;
     background: #faf7ff;
     border: 1px solid #dddddd;
@@ -199,7 +206,7 @@ form p {
     align-items: flex-start;
     padding: 0px;
     gap: 5px;
-    width: 650px;
+    max-width: 650px;
     height: 39px;
     flex: none;
     order: 2;
@@ -214,7 +221,7 @@ form p {
     align-items: flex-start;
     padding: 10px;
     gap: 10px;
-    width: 322.5px;
+    max-width: 322.5px;
     height: 39px;
     background: #faf7ff;
     border: 1px solid #dddddd;
@@ -231,7 +238,7 @@ form p {
     align-items: flex-start;
     padding: 10px;
     gap: 10px;
-    width: 322.5px;
+    max-width: 322.5px;
     height: 39px;
     background: #faf7ff;
     border: 1px solid #dddddd;
@@ -248,7 +255,7 @@ form p {
     align-items: flex-start;
     padding: 10px;
     gap: 10px;
-    width: 650px;
+    max-width: 650px;
     height: 39px;
     background: #faf7ff;
     border: 1px solid #dddddd;
@@ -266,7 +273,7 @@ form p {
     align-items: flex-start;
     padding: 10px;
     gap: 10px;
-    width: 650px;
+    max-width: 650px;
     height: 39px;
     background: #faf7ff;
     border: 1px solid #dddddd;
@@ -283,7 +290,7 @@ form p {
     justify-content: center;
     align-items: center;
     padding: 3px 20px;
-    width: 650px;
+    max-width: 650px;
     height: 45px;
     background: #9747ff;
     border-radius: 3px;
@@ -294,7 +301,7 @@ form p {
 }
 
 .button {
-    width: 84px;
+    max-width: 84px;
     height: 22px;
     font-family: "Inter", sans-serif;
     font-style: normal;
@@ -311,7 +318,7 @@ form p {
 }
 
 .plus {
-    width: 24px;
+    max-width: 24px;
     height: 24px;
     flex: none;
     order: 1;
