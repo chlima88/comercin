@@ -10,19 +10,28 @@
             <div id="textBox">
                 <p>Informe os dados do item</p>
             </div>
-            <section>
-                <form action="">
+            <section class="form">
+                <form>
                     <p>
-                        <input type="text" name="nameItem" class="nameItem" />
+                        <input
+                            type="text"
+                            name="nameItem"
+                            class="nameItem"
+                            placeholder="Nome do produto"
+                        />
                         <input
                             type="number"
                             name="itemPrice"
                             class="itemPrice"
+                            placeholder="R$"
                         />
                     </p>
-
-                    <input type="text" name="desciption" class="desciption" />
-
+                    <input
+                        type="text"
+                        name="desciption"
+                        class="desciption"
+                        placeholder="Descrição do produto"
+                    />
                     <span class="send">
                         <input type="submit" value="Enviar" class="button" />
                         <img
@@ -53,7 +62,7 @@ import Main from "@/components/Main.vue";
     align-items: center;
     padding: 20px 0px;
     gap: 10px;
-    width: 1200px;
+    max-width: 1200px;
     height: 70px;
     flex: none;
     order: 0;
@@ -62,7 +71,7 @@ import Main from "@/components/Main.vue";
 }
 
 #messageBox > h1 {
-    width: 123px;
+    max-width: 123px;
     height: 30px;
     font-family: "Inter";
     font-style: normal;
@@ -85,12 +94,12 @@ import Main from "@/components/Main.vue";
     align-items: center;
     padding: 6px 0px;
     gap: 10px;
-    width: 1200px;
+    max-width: 1200px;
     height: 31px;
 }
 
 #textBox > p {
-    width: 1200px;
+    max-width: 1200px;
     height: 19px;
     font-family: "Inter";
     font-style: normal;
@@ -107,17 +116,24 @@ import Main from "@/components/Main.vue";
     flex-grow: 0;
 }
 
+.form {
+    width: 100%;
+    align-items: center;
+    margin: auto;
+}
+
 form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
     gap: 10px;
-    width: 650px;
+    max-width: 650px;
     height: 262px;
     flex: none;
     order: 2;
     flex-grow: 0;
+    margin: auto;
 }
 
 form > p {
@@ -126,7 +142,7 @@ form > p {
     align-items: flex-start;
     padding: 0px;
     gap: 5px;
-    width: 650px;
+    max-width: 100%;
     height: 40px;
     flex: none;
     order: 0;
@@ -141,7 +157,7 @@ form > p {
     align-items: flex-start;
     padding: 10px;
     gap: 10px;
-    width: 537px;
+    max-width: 70%;
     height: 40px;
     background: #faf7ff;
     border: 1px solid #dddddd;
@@ -159,7 +175,7 @@ form > p {
     align-items: flex-start;
     padding: 10px;
     gap: 10px;
-    width: 110px;
+    max-width: 30%;
     height: 40px;
     background: #faf7ff;
     border: 1px solid #dddddd;
@@ -172,7 +188,7 @@ form > p {
 
 .desciption {
     box-sizing: border-box;
-    width: 650px;
+    max-width: 100%;
     height: 157px;
     background: #faf7ff;
     border: 1px solid #dddddd;
@@ -189,7 +205,7 @@ form > p {
     justify-content: center;
     align-items: center;
     padding: 3px 20px;
-    width: 650px;
+    max-width: 100%;
     height: 45px;
     background: #9747ff;
     border-radius: 3px;
@@ -200,7 +216,7 @@ form > p {
 }
 
 .button {
-    width: 84px;
+    width: 15%;
     height: 22px;
     background-color: #9747ff;
     font-family: "Inter";
@@ -217,7 +233,7 @@ form > p {
 }
 
 .plus {
-    width: 24px;
+    max-width: 24px;
     height: 24px;
     flex: none;
     order: 1;
