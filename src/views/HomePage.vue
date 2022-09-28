@@ -71,7 +71,7 @@
                         <Card
                             v-for="i in 5"
                             :key="i"
-                            title="Sanduíche do Lucas"
+                            title="Lanche do Lucas"
                             :img="sanduicheImg"
                             size="lg"
                         >

@@ -26,12 +26,11 @@
                             placeholder="R$"
                         />
                     </p>
-                    <input
-                        type="text"
-                        name="desciption"
-                        class="desciption"
+                    <textarea
+                        name="description"
+                        class="description"
                         placeholder="Descrição do produto"
-                    />
+                    ></textarea>
                     <span class="send">
                         <input type="submit" value="Enviar" class="button" />
                         <img
@@ -186,7 +185,7 @@ form > p {
     flex-grow: 0;
 }
 
-.desciption {
+.description {
     box-sizing: border-box;
     max-width: 100%;
     height: 157px;
@@ -197,6 +196,10 @@ form > p {
     order: 1;
     align-self: stretch;
     flex-grow: 0;
+    text-align: start;
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+    font-size: 12.5px;
 }
 
 .send {

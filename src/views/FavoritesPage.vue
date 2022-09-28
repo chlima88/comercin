@@ -25,7 +25,6 @@
                     <template #address> {{ card.address }}</template>
                     <template #contact> {{ card.contact }} </template>
                 </Card>
-
                 <RouterLink to="/newFavorite" class="card new-card">
                     <p class="new-card__add-title">Novo</p>
                     <svg
@@ -60,16 +59,16 @@ const cardsList = [
         title: "Picolé da Thalita",
         image: picoleImg,
         text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam inventore deleniti dolore repellendus voluptatem velit molestias quidem omnis excepturi eveniet, minus vitae. Qui fugia",
-        address: "Rua da imaginação N° 0000",
+        address: "Rua Azul N° 0000",
         contact: "(00) 0000-0000",
         price: 3,
         stars: 5,
     },
     {
-        title: "Sanduíche do Lucas",
+        title: "Lanche do Lucas",
         image: sanduicheImg,
         text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam inventore deleniti dolore repellendus voluptatem velit molestias quidem omnis excepturi eveniet, minus vitae. Qui fugia",
-        address: "Rua da imaginação N° 0000",
+        address: "Rua Azul N° 0000",
         contact: "(00) 0000-0000",
         price: 2,
         stars: 4,
@@ -78,7 +77,16 @@ const cardsList = [
         title: "Coco do Charles",
         image: cocoImg,
         text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam inventore deleniti dolore repellendus voluptatem velit molestias quidem omnis excepturi eveniet, minus vitae. Qui fugia",
-        address: "Rua da imaginação N° 0000",
+        address: "Rua Azul N° 0000",
+        contact: "(00) 0000-0000",
+        price: 1,
+        stars: 4,
+    },
+    {
+        title: "Coco do Charles",
+        image: cocoImg,
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam inventore deleniti dolore repellendus voluptatem velit molestias quidem omnis excepturi eveniet, minus vitae. Qui fugia",
+        address: "Rua Azul N° 0000",
         contact: "(00) 0000-0000",
         price: 1,
         stars: 4,
@@ -95,9 +103,10 @@ h1 {
 }
 
 .cardlist {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* flex-direction: row;
+    align-items: center; */
     padding: 0;
     gap: 1rem;
     max-width: 100%;
@@ -121,7 +130,7 @@ h1 {
     border-style: dashed;
     width: 100%;
     border-radius: 0.7rem;
-    height: 9.6rem;
+    height: 20rem;
 }
 
 .new-card__add-title {
@@ -142,7 +151,13 @@ h1 {
 
 @media screen and (min-width: 768px) {
     .cardlist {
-        flex-direction: row;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .cardlist {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 </style>
