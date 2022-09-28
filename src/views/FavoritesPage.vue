@@ -26,7 +26,7 @@
                     <template #contact> {{ card.contact }} </template>
                 </Card>
 
-                <div class="card new-card">
+                <RouterLink to="/newFavorite" class="card new-card">
                     <p class="new-card__add-title">Novo</p>
                     <svg
                         class="new-card__add-icon"
@@ -41,7 +41,7 @@
                             fill="#AEAEAE"
                         />
                     </svg>
-                </div>
+                </RouterLink>
             </div>
         </template>
     </Main>

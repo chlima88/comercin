@@ -62,7 +62,7 @@
                 <router-link to="/newTrade">
                     <img src="@/assets/icons/plus_square.png" />
                 </router-link>
-                <router-link to="/MapPage">
+                <router-link to="/map">
                     <img src="@\assets\icons\Map-location.svg" />
                 </router-link>
                 <router-link to="/favorites">

@@ -190,4 +190,10 @@ const toggleMenu = () => {
     font-size: 1.3rem;
     font-weight: 500;
 }
+
+@media screen and (min-width: 768px) {
+    .sidemenu__top {
+        visibility: hidden;
+    }
+}
 </style>

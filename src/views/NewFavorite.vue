@@ -45,10 +45,10 @@
                 </Card>
             </div>
             <div class="map_view">
-                <button>
+                <RouterLink to="/map">
                     <p>Visualizar no mapa</p>
                     <img src="@\assets\icons\Map-location.svg" />
-                </button>
+                </RouterLink>
             </div>
         </template>
     </Main>
@@ -113,17 +113,25 @@ form {
 }
 
 .box_search {
+    position: relative;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    padding: 0.8rem;
-    gap: 0.8rem;
+    max-width: 650px;
     width: 100%;
     height: 4rem;
     background: #faf7ff;
     border: 1px solid #dddddd;
     border-radius: 3px 0px 0px 3px;
+}
+
+.box_search img:first-child {
+    position: absolute;
+    left: 1rem;
+}
+
+.box_search img:last-child {
+    position: absolute;
+    right: 1rem;
 }
 .search {
     width: 100%;
@@ -175,9 +183,10 @@ form {
     width: 100%;
 }
 
-.map_view > button {
+.map_view > a {
     background-color: var(--color-primary);
     width: 100%;
+    max-width: 650px;
     padding: 0.7rem;
     display: flex;
     align-items: center;
@@ -185,7 +194,7 @@ form {
     border-radius: 5px;
 }
 
-.map_view > button > p {
+.map_view > a > p {
     width: auto;
     margin-right: 1rem;
     font-size: 1.5rem;

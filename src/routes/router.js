@@ -43,7 +43,7 @@ const routes = [
         component: SettingsPage,
     },
     {
-        path: "/MapPage",
+        path: "/map",
         component: MapPage,
     },
     {
