@@ -1,6 +1,6 @@
 {
-  "appId": "com.example.app",
-  "appName": "capacitor",
+  "appId": "com.comercin.app",
+  "appName": "comercin",
   "webDir": "dist",
   "bundledWebRuntime": false
 }

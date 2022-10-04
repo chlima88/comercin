@@ -11,15 +11,20 @@
                 <p>Informe os dados do item</p>
             </div>
             <section class="form">
-                <form>
+                <form
+                    @submit.prevent="saveItem"
+                    @change="statusMessage = false"
+                >
                     <p>
                         <input
+                            v-model="item.name"
                             type="text"
                             name="nameItem"
                             class="nameItem"
                             placeholder="Nome do produto"
                         />
                         <input
+                            v-model.number="item.price"
                             type="number"
                             name="itemPrice"
                             class="itemPrice"
@@ -27,30 +32,63 @@
                         />
                     </p>
                     <textarea
+                        v-model="item.description"
                         name="description"
                         class="description"
                         placeholder="Descrição do produto"
                     ></textarea>
-                    <span class="send">
-                        <input type="submit" value="Enviar" class="button" />
+                    <button type="submit" class="button">
+                        Enviar
                         <img
                             src="../assets/icons/plus.svg"
                             alt=""
                             class="plus"
                         />
-                    </span>
+                    </button>
                 </form>
+                <div
+                    class="status-message"
+                    :class="{ 'show-statusmessage': statusMessage }"
+                >
+                    Adicionado com sucesso!
+                </div>
             </section>
         </template>
     </Main>
-    <!-- <Content /> -->
-    <!-- <Footer /> -->
 </template>
 
 <script setup>
+import { ref, reactive } from "vue";
+import { useStore } from "vuex";
 import Header from "@/components/Header.vue";
 import Main from "@/components/Main.vue";
-// import Content from "@/components/Content.vue";
+
+const store = useStore();
+const vendor = {
+    name: "User",
+    address: "Rua Lisboa 40",
+    contact: "(21) 2121-2121",
+    stars: 5,
+    price: 2,
+};
+const item = reactive({
+    name: "",
+    description: "",
+    price: "",
+});
+const statusMessage = ref(false);
+
+const saveItem = () => {
+    store.commit("saveVendor", {
+        ...vendor,
+        product: item.name,
+        description: item.description,
+    });
+    statusMessage.value = true;
+    item.name = "";
+    item.description = "";
+    item.price = "";
+};
 </script>
 
 <style scoped>
@@ -186,61 +224,55 @@ form > p {
 }
 
 .description {
-    box-sizing: border-box;
-    max-width: 100%;
+    width: 100%;
     height: 157px;
     background: #faf7ff;
     border: 1px solid #dddddd;
     border-radius: 3px;
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-    text-align: start;
     font-family: Arial, sans-serif;
     padding: 1rem;
     font-size: 12.5px;
 }
 
-.send {
+.button {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 4rem;
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-primary-contrast);
+    background-color: var(--color-primary);
+}
+
+.plus {
+    height: 15px;
+    color: #ffffff;
+}
+
+.status-message {
+    display: none;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 3px 20px;
-    max-width: 100%;
+
+    margin: auto;
+    width: 100%;
+    max-width: 650px;
     height: 45px;
-    background: #9747ff;
+
+    background: #e2ffdd;
+    border: 2px solid #21ec00;
     border-radius: 3px;
-    flex: none;
-    order: 2;
-    align-self: stretch;
-    flex-grow: 0;
+    color: #2ba417;
 }
 
-.button {
-    width: 15%;
-    height: 22px;
-    background-color: #9747ff;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
+.show-statusmessage {
     display: flex;
-    align-items: center;
-    color: #ffffff;
-    flex: none;
-    border: 0;
-    flex-grow: 0;
-}
-
-.plus {
-    max-width: 24px;
-    height: 24px;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    color: #ffffff;
 }
 </style>

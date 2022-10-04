@@ -1,6 +1,6 @@
 <template>
     <Header>
-        <template #title>Novo Favorito</template>
+        <template #title>Pesquisar</template>
     </Header>
     <Main>
         <template #main>
@@ -8,40 +8,27 @@
             <div class="textBox">
                 <p>Insira o nome de um lugar, produto ou vendedor</p>
             </div>
-            <div class="search_container">
-                <form action="submit">
-                    <div class="box_search">
-                        <img src="../assets/icons/search.svg" />
-                        <input
-                            type="text"
-                            class="search"
-                            placeholder="Busque pelo mapa"
-                        />
-                        <img src="../assets/icons/close.svg" />
-                    </div>
-                    <button class="button_search" type="submit">
-                        Procurar
-                    </button>
-                </form>
-            </div>
+            <SearchBox
+                placeholder="Busque pelo mapa"
+                @searchcomplete="showResults"
+            />
+
             <div class="card_container">
                 <Card
-                    v-for="i in cards"
-                    :key="i.id"
-                    :title="i.title"
-                    :img="i.imagem"
-                    :size="i.size"
+                    v-for="card in searchList"
+                    :id="card.id"
+                    :key="card.id"
+                    :title="card.product"
+                    :img="card.image"
+                    :stars="card.stars"
+                    :price="card.price"
+                    :favorite="card.favorite"
+                    size="md"
                     class="card"
                 >
-                    <template #text>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Repellat, consequuntur omnis, fugiat nobis enim
-                        dolor sint cumque ipsa ipsam eaque sapiente nihil quis!
-                        Eos consequatur consequuntur aliquam, deserunt impedit
-                        molestiae.
-                    </template>
-                    <template #address> Rua da imaginação N° 0000 </template>
-                    <template #contact> (00) 0000-0000 </template>
+                    <template #text> {{ card.description }}</template>
+                    <template #address> {{ card.address }} </template>
+                    <template #contact> {{ card.contact }} </template>
                 </Card>
             </div>
             <div class="map_view">
@@ -55,24 +42,17 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import Header from "@/components/Header.vue";
 import Main from "@/components/Main.vue";
 import Card from "@/components/Card.vue";
-import picoleImg from "@/assets/picole.png";
-import cocoImg from "@/assets/coco.png";
-import sanduicheImg from "@/assets/sanduiche.png";
+import SearchBox from "../components/SearchBox.vue";
 
-const cards = [
-    { id: 1, title: "Sanduíche do Lucas", imagem: sanduicheImg, size: "md" },
-    { id: 2, title: "Sanduíche do Lucas", imagem: sanduicheImg, size: "md" },
-    { id: 3, title: "Sanduíche do Lucas", imagem: sanduicheImg, size: "md" },
-    { id: 4, title: "Coco do Charles", imagem: cocoImg, size: "md" },
-    { id: 5, title: "Coco do Charles", imagem: cocoImg, size: "md" },
-    { id: 6, title: "Coco do Charles", imagem: cocoImg, size: "md" },
-    { id: 7, title: "Picole da Thalita", imagem: picoleImg, size: "md" },
-    { id: 8, title: "Picole da Thalita", imagem: picoleImg, size: "md" },
-    { id: 9, title: "Picole da Thalita", imagem: picoleImg, size: "md" },
-];
+const searchList = ref([]);
+
+const showResults = (results) => {
+    searchList.value = results;
+};
 </script>
 
 <style scoped>

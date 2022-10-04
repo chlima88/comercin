@@ -93,8 +93,17 @@
                 </div>
             </div>
             <div class="card__actionbar">
-                <div class="card__heart-container">
-                    <img src="@/assets/icons/favorite.svg" alt="favorite" />
+                <div class="card__heart-container" @click="toggleFavorite(id)">
+                    <img
+                        v-if="favorite"
+                        src="@/assets/icons/favorite-filled.svg"
+                        alt="favorite"
+                    />
+                    <img
+                        v-else
+                        src="@/assets/icons/favorite-empty.svg"
+                        alt="favorite"
+                    />
                 </div>
                 <div class="card__marker-container">
                     <img src="@/assets/icons/marker.svg" alt="marker" />
@@ -105,21 +114,37 @@
 </template>
 
 <script setup>
-import { computed, defineProps } from "vue";
+import { ref, computed, watchEffect } from "vue";
+import { useStore } from "vuex";
 
 const props = defineProps({
+    id: { type: Number, required: true },
     title: { type: String, required: true },
     img: { type: String, required: true },
     size: { type: String, default: "" },
     price: { type: Number, default: 3 },
     stars: { type: Number, default: 5 },
+    favorite: { type: Boolean, default: false },
 });
+
+const store = useStore();
 
 const containerSize = computed(() => ({
     "container--sm": props.size === "sm",
     "container--md": props.size === "md",
     "container--lg": props.size === "lg",
 }));
+
+const favorite = ref(false);
+
+watchEffect(() => {
+    favorite.value = props.favorite;
+});
+
+const toggleFavorite = (id) => {
+    store.commit("toggleFavorite", id);
+    favorite.value = !favorite.value;
+};
 
 const price = computed(() => props.price);
 const stars = computed(() => props.stars);
@@ -173,7 +198,7 @@ const stars = computed(() => props.stars);
     justify-content: space-between;
     padding: 0 1rem 1rem;
     gap: 5px;
-    /* width: 15rem; */
+    width: 15rem;
     height: 100%;
 }
 

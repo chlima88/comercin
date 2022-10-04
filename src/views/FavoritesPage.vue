@@ -1,6 +1,6 @@
 <template>
     <Header>
-        <template #title>Favorites</template>
+        <template #title>Favoritos</template>
     </Header>
     <Main>
         <template #main>
@@ -13,19 +13,21 @@
             </div>
             <div class="cardlist">
                 <Card
-                    v-for="(card, index) in cardsList"
-                    :key="index"
-                    :title="card.title"
+                    v-for="card in favoriteVendors"
+                    :id="card.id"
+                    :key="card.id"
+                    :title="card.product"
                     :img="card.image"
-                    :price="card.price"
                     :stars="card.stars"
+                    :price="card.price"
+                    :favorite="card.favorite"
                     size="sm"
                 >
-                    <template #text>{{ card.text }} </template>
+                    <template #text>{{ card.description }} </template>
                     <template #address> {{ card.address }}</template>
                     <template #contact> {{ card.contact }} </template>
                 </Card>
-                <RouterLink to="/newFavorite" class="card new-card">
+                <RouterLink to="/search" class="card new-card">
                     <p class="new-card__add-title">Novo</p>
                     <svg
                         class="new-card__add-icon"
@@ -47,51 +49,15 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
+import { useStore } from "vuex";
 import Header from "@/components/Header.vue";
 import Main from "@/components/Main.vue";
 import Card from "@/components/Card.vue";
-import picoleImg from "@/assets/picole.png";
-import sanduicheImg from "@/assets/sanduiche.png";
-import cocoImg from "@/assets/coco.png";
 
-const cardsList = [
-    {
-        title: "Picolé da Thalita",
-        image: picoleImg,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam inventore deleniti dolore repellendus voluptatem velit molestias quidem omnis excepturi eveniet, minus vitae. Qui fugia",
-        address: "Rua Azul N° 0000",
-        contact: "(00) 0000-0000",
-        price: 3,
-        stars: 5,
-    },
-    {
-        title: "Lanche do Lucas",
-        image: sanduicheImg,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam inventore deleniti dolore repellendus voluptatem velit molestias quidem omnis excepturi eveniet, minus vitae. Qui fugia",
-        address: "Rua Azul N° 0000",
-        contact: "(00) 0000-0000",
-        price: 2,
-        stars: 4,
-    },
-    {
-        title: "Coco do Charles",
-        image: cocoImg,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam inventore deleniti dolore repellendus voluptatem velit molestias quidem omnis excepturi eveniet, minus vitae. Qui fugia",
-        address: "Rua Azul N° 0000",
-        contact: "(00) 0000-0000",
-        price: 1,
-        stars: 4,
-    },
-    {
-        title: "Coco do Charles",
-        image: cocoImg,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam inventore deleniti dolore repellendus voluptatem velit molestias quidem omnis excepturi eveniet, minus vitae. Qui fugia",
-        address: "Rua Azul N° 0000",
-        contact: "(00) 0000-0000",
-        price: 1,
-        stars: 4,
-    },
-];
+const store = useStore();
+
+const favoriteVendors = computed(() => store.getters.getFavoriteVendors);
 </script>
 <style scoped>
 h1 {

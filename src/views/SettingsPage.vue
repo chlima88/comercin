@@ -1,9 +1,7 @@
 <template>
     <Header>
-        <template #title>Settings</template>
+        <template #title>Configurações</template>
     </Header>
-    <!-- <Content /> -->
-    <!-- <Footer /> -->
 </template>
 
 <script setup>

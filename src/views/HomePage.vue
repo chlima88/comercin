@@ -11,6 +11,7 @@
                     procurados da região
                 </p>
             </div>
+            <SearchBox placeholder="Busque por produto, vendedor ou lugar" />
             <div class="tags-box">
                 <div class="tags"><p>Comidas mais procuradas</p></div>
                 <div class="tags"><p>Comércios mais populares</p></div>
@@ -20,25 +21,21 @@
             <Carrousel title="Mais vistos em sua localização">
                 <template #content>
                     <Card
-                        v-for="i in 5"
-                        :key="i"
-                        title="Picole da Thalita"
-                        :img="picoleImg"
-                        :price="2"
-                        :stars="3"
-                        size="md"
+                        v-for="card in mostViewed"
+                        :id="card.id"
+                        :key="card.id"
+                        :title="card.product"
+                        :img="card.image"
+                        :favorite="card.favorite"
+                        size="lg"
                     >
                         <template #text>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ipsam inventore deleniti dolore repellendus
-                            voluptatem velit molestias quidem omnis excepturi
-                            eveniet, minus vitae. Qui fugiat reiciendis optio
-                            eligendi libero. Deleniti, sed.
+                            {{ card.description }}
                         </template>
                         <template #address>
-                            Rua da imaginação N° 0000
+                            {{ card.address }}
                         </template>
-                        <template #contact> (00) 0000-0000 </template>
+                        <template #contact> {{ card.contact }} </template>
                     </Card>
                 </template>
             </Carrousel>
@@ -46,23 +43,21 @@
                 <Carrousel title="Favoritos">
                     <template #content>
                         <Card
-                            v-for="i in 5"
-                            :key="i"
-                            title="Coco do Charles"
-                            :img="cocoImg"
+                            v-for="card in favorites"
+                            :id="card.id"
+                            :key="card.id"
+                            :title="card.product"
+                            :img="card.image"
+                            :favorite="card.favorite"
                             size="lg"
                         >
                             <template #text>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Illum ab quo ducimus amet qui
-                                inventore, officiis assumenda sequi, totam dolor
-                                minus! Odio pariatur alias sequi repudiandae
-                                sint velit ad. Incidunt.
+                                {{ card.description }}
                             </template>
                             <template #address>
-                                Rua da imaginação N° 0000
+                                {{ card.address }}
                             </template>
-                            <template #contact> (00) 0000-0000 </template>
+                            <template #contact> {{ card.contact }} </template>
                         </Card>
                     </template>
                 </Carrousel>
@@ -70,6 +65,7 @@
                     <template #content>
                         <Card
                             v-for="i in 5"
+                            :id="i"
                             :key="i"
                             title="Lanche do Lucas"
                             :img="sanduicheImg"
@@ -97,13 +93,22 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
+import { useStore } from "vuex";
 import Header from "@/components/Header.vue";
 import Main from "@/components/Main.vue";
 import Carrousel from "@/components/Carrousel.vue";
 import Card from "@/components/Card.vue";
+import SearchBox from "@/components/SearchBox.vue";
 import picoleImg from "@/assets/picole.png";
 import cocoImg from "@/assets/coco.png";
 import sanduicheImg from "@/assets/sanduiche.png";
+
+const store = useStore();
+
+const mostViewed = computed(() => store.getters.getResultsAll);
+
+const favorites = computed(() => store.getters.getFavoriteVendors);
 </script>
 <style scoped>
 h1 {

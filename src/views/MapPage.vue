@@ -18,7 +18,7 @@
                 <button class="button_search" type="submit">Procurar</button>
             </form>
             <Content />
-            <RouterLink to="/newFavorite" class="button_list">
+            <RouterLink to="/search" class="button_list">
                 Visualizar em Lista
                 <img
                     src="../assets/icons/clipboard.svg"

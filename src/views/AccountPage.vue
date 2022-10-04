@@ -1,9 +1,7 @@
 <template>
     <Header>
-        <template #title>Account</template>
+        <template #title>Minha Conta</template>
     </Header>
-    <!-- <Content /> -->
-    <!-- <Footer /> -->
 </template>
 
 <script setup>

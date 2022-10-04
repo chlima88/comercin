@@ -7,7 +7,7 @@ import NewTrade from "@/views/NewTrade.vue";
 import FavoritesPage from "@/views/FavoritesPage.vue";
 import SettingsPage from "@/views/SettingsPage.vue";
 import MapPage from "@/views/MapPage.vue";
-import NewFavorite from "@/views/NewFavorite.vue";
+import SearchPage from "@/views/SearchPage.vue";
 
 const routes = [
     {
@@ -47,8 +47,8 @@ const routes = [
         component: MapPage,
     },
     {
-        path: "/newFavorite",
-        component: NewFavorite,
+        path: "/search",
+        component: SearchPage,
     },
 ];
 

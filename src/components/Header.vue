@@ -1,7 +1,11 @@
 <template>
     <header>
-        <Toolbar @toggle-menu="toggleSideMenu" />
-        <SideMenu :show="state" @toggle-menu="state = false" />
+        <Toolbar :user-status="userStatus" @toggle-menu="toggleSideMenu" />
+        <SideMenu
+            :show="state"
+            @toggle-menu="state = false"
+            @toggle-user-status="toggleUserStatus"
+        />
         <div class="top">
             <h1><slot name="title" /></h1>
         </div>
@@ -14,9 +18,14 @@ import Toolbar from "@/components/Toolbar.vue";
 import SideMenu from "./SideMenu.vue";
 
 const state = ref(false);
+const userStatus = ref(false);
 
 const toggleSideMenu = () => {
     state.value = !state.value;
+};
+
+const toggleUserStatus = () => {
+    userStatus.value = !userStatus.value;
 };
 </script>
 

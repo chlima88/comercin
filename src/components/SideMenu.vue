@@ -11,9 +11,6 @@
                         <img src="@/assets/icons/vuejs.png" />
                         <p>Comercin</p>
                     </router-link>
-                    <button @click="toggleMenu, $emit('toggleMenu')">
-                        .X.
-                    </button>
                 </div>
                 <div class="sidemenu__items">
                     <router-link to="/">
@@ -49,6 +46,7 @@
                     <a
                         href="#"
                         class="sidemenu__avatar-container"
+                        :class="{ 'sidemenu__avatar--online': switchChecked }"
                         @click="toggleMenu, $emit('toggleMenu')"
                     >
                         <img
@@ -58,7 +56,17 @@
                         /> </a
                     >User
                 </div>
-                <div class="sidemenu__status">Online</div>
+                <div class="sidemenu__status">
+                    {{ status }}
+                    <input
+                        class="sidemenu__status-switch"
+                        type="checkbox"
+                        @click="
+                            (switchChecked = !switchChecked),
+                                $emit('toggleUserStatus')
+                        "
+                    />
+                </div>
             </div>
         </div>
     </div>
@@ -66,9 +74,9 @@
 </template>
 
 <script setup>
-import { ref, watchEffect } from "vue";
+import { ref, computed, watchEffect } from "vue";
 
-defineEmits(["toggleMenu"]);
+defineEmits(["toggleMenu", "toggleUserStatus"]);
 
 const props = defineProps({
     show: {
@@ -78,6 +86,9 @@ const props = defineProps({
 });
 
 const menuState = ref(false);
+const switchChecked = ref(false);
+
+const status = computed(() => (switchChecked.value ? "Online" : "Offline"));
 
 watchEffect(() => {
     menuState.value = props.show;
@@ -91,13 +102,14 @@ const toggleMenu = () => {
 <style lang="css" scoped>
 .wrapper {
     position: fixed;
+    top: 0;
     left: -230px;
     z-index: 1;
     height: 100%;
 }
 .sidemenu--show {
     position: relative;
-    left: 230px;
+    left: 225px;
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
@@ -105,6 +117,7 @@ const toggleMenu = () => {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 40rem;
     height: 100%;
     width: 230px;
 
@@ -156,6 +169,8 @@ const toggleMenu = () => {
     justify-content: space-between;
     align-items: center;
     margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 .sidemenu__user {
@@ -178,8 +193,12 @@ const toggleMenu = () => {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    border: 2px solid #21ec00;
+    border: 2px solid #bebebe;
     overflow: hidden;
+}
+
+.sidemenu__avatar--online {
+    border: 2px solid #21ec00;
 }
 
 .sidemenu__avatar-image {
@@ -187,13 +206,61 @@ const toggleMenu = () => {
 }
 
 .sidemenu__status {
+    display: flex;
+    gap: 1rem;
     font-size: 1.3rem;
     font-weight: 500;
 }
 
+.sidemenu__status-switch {
+    -webkit-appearance: none;
+    position: relative;
+    width: 2.5rem;
+    height: 1.5rem;
+    background-color: var(--color-primary-contrast);
+    outline: none;
+    background-color: #bebebe;
+    border-radius: 2rem;
+    transition: all ease 0.5s;
+}
+
+.sidemenu__status-switch:checked {
+    background-color: #21ec00;
+    transition: all ease 0.5s;
+}
+
+.sidemenu__status-switch:before {
+    content: "";
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background-color: var(--color-primary-contrast);
+    transform: scale(1.1);
+    box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+    transition: all ease 0.5s;
+}
+
+.sidemenu__status-switch:checked:before {
+    left: 1.5rem;
+    transition: 0.5s;
+}
+
 @media screen and (min-width: 768px) {
+    .sidemenu {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        gap: 0;
+    }
     .sidemenu__top {
         visibility: hidden;
+    }
+
+    .sidemenu__statusbar {
+        display: flex;
+        margin-top: 0.5rem;
     }
 }
 </style>

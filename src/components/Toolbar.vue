@@ -4,6 +4,7 @@
         <a
             href="#"
             class="toolbar__avatar-container"
+            :class="{ 'toolbar__avatar--online': $props.userStatus }"
             @click="$emit('toggleMenu')"
         >
             <img
@@ -13,7 +14,7 @@
             />
         </a>
         <div class="toolbar__menu-container">
-            <form action="submit">
+            <form @submit.prevent="">
                 <div class="toolbar__input-container">
                     <svg
                         width="14"
@@ -56,14 +57,24 @@
                 <router-link to="/account">
                     <img src="@/assets/icons/account.png" />
                 </router-link>
-                <router-link to="/new">
-                    <img src="@/assets/icons/plus_square.png" />
-                </router-link>
-                <router-link to="/newTrade">
-                    <img src="@/assets/icons/plus_square.png" />
-                </router-link>
+                <div class="toolbar__dropdown">
+                    <button class="toolbar__dropbutton" @click="toggleSubmenu">
+                        <img src="@/assets/icons/plus_square.png" />
+                    </button>
+                    <div
+                        class="toolbar__dropdown-content"
+                        :class="{ 'submenu--hide': submenuState }"
+                    >
+                        <router-link class="toolbar__subitem" to="/new">
+                            Item
+                        </router-link>
+                        <router-link class="toolbar__subitem" to="/newTrade">
+                            Parceiro
+                        </router-link>
+                    </div>
+                </div>
                 <router-link to="/map">
-                    <img src="@\assets\icons\Map-location.svg" />
+                    <img src="@/assets/icons/Map-location.svg" />
                 </router-link>
                 <router-link to="/favorites">
                     <img src="@/assets/icons/favorite.png" />
@@ -88,13 +99,19 @@
 </template>
 
 <script setup>
-// import router from "@/routes/router.js";
+import { ref } from "vue";
+
+defineProps({
+    userStatus: { type: Boolean, required: true },
+});
 
 defineEmits(["toggleMenu"]);
 
-// function toggleSideBar() {
-//     router.push("/account");
-// }
+const submenuState = ref(true);
+
+const toggleSubmenu = () => {
+    submenuState.value = !submenuState.value;
+};
 </script>
 
 <style scoped>
@@ -130,8 +147,12 @@ defineEmits(["toggleMenu"]);
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    border: 2px solid #21ec00;
+    border: 2px solid #bebebe;
     overflow: hidden;
+}
+
+.toolbar__avatar--online {
+    border: 2px solid #21ec00;
 }
 
 .toolbar__avatar-image {
@@ -213,6 +234,38 @@ defineEmits(["toggleMenu"]);
     gap: 10px;
 }
 
+.toolbar__dropdown {
+    position: relative;
+    display: flex;
+}
+
+.toolbar__dropbutton {
+    background: transparent;
+    border: none;
+}
+
+.toolbar__dropdown-content {
+    position: absolute;
+    bottom: 100%;
+    background-color: rgba(241, 241, 241, 0.9);
+    z-index: 1;
+    border: 2px solid var(--color-secondary);
+}
+
+.submenu--hide {
+    display: none;
+}
+
+.toolbar__subitem {
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.toolbar__subitem:hover {
+    background-color: rgba(196, 145, 255, 0.7);
+}
+
 .toolbar__logout-btn {
     padding-inline: 10px;
 }
@@ -279,6 +332,11 @@ defineEmits(["toggleMenu"]);
 
     .toolbar__menu-container form {
         display: flex;
+    }
+
+    .toolbar__dropdown-content {
+        top: 100%;
+        bottom: unset;
     }
 }
 </style>
