@@ -335,6 +335,7 @@ const stars = computed(() => props.stars);
 
     .card__data {
         padding: 0;
+        width: auto;
     }
 
     .card__title {
