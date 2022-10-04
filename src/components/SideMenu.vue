@@ -117,7 +117,6 @@ const toggleMenu = () => {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 40rem;
     height: 100%;
     width: 230px;
 
