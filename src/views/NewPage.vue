@@ -22,6 +22,7 @@
                             name="nameItem"
                             class="nameItem"
                             placeholder="Nome do produto"
+                            required
                         />
                         <input
                             v-model.number="item.price"
@@ -29,6 +30,7 @@
                             name="itemPrice"
                             class="itemPrice"
                             placeholder="R$"
+                            required
                         />
                     </p>
                     <textarea
@@ -36,6 +38,7 @@
                         name="description"
                         class="description"
                         placeholder="Descrição do produto"
+                        required
                     ></textarea>
                     <button type="submit" class="button">
                         Enviar

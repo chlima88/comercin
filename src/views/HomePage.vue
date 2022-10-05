@@ -1,6 +1,6 @@
 <template>
     <Header>
-        <template #title>Home</template>
+        <template #title>Início</template>
     </Header>
     <Main>
         <template #main>

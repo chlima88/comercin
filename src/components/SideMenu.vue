@@ -15,29 +15,29 @@
                 <div class="sidemenu__items">
                     <router-link to="/">
                         <img src="@/assets/icons/house.png" />
-                        <p>Home</p>
+                        <p>Inicio</p>
                     </router-link>
                     <router-link to="/account">
                         <img src="@/assets/icons/account.png" />
-                        <p>My Account</p>
+                        <p>Minha Conta</p>
                     </router-link>
                     <router-link to="/new">
                         <img src="@/assets/icons/plus_square.png" />
-                        <p>New</p>
+                        <p>Novo</p>
                     </router-link>
                     <router-link to="/favorites">
                         <img src="@/assets/icons/favorite.png" />
-                        <p>Favorites</p>
+                        <p>Favoritos</p>
                     </router-link>
                     <router-link to="/settings">
                         <img src="@/assets/icons/settings.png" />
-                        <p>Settings</p>
+                        <p>Configurações</p>
                     </router-link>
                 </div>
                 <div class="sidemenu__items">
                     <router-link to="/">
                         <img src="@/assets/icons/logout.png" />
-                        <p>Logout</p>
+                        <p>Sair</p>
                     </router-link>
                 </div>
             </div>
